@@ -26,28 +26,6 @@ your own custom collections — like Pinterest, but for GitHub.
 | Auth      | JWT (jjwt) + BCrypt |
 | External  | GitHub REST API (public, no login required to search) |
 
-## 📁 Project structure
-
-```
-github-collections/
-├── backend/                 Spring Boot API (Java)
-│   ├── pom.xml
-│   └── src/main/java/com/githubcollections/
-│       ├── controller/      REST endpoints
-│       ├── service/         Business logic
-│       ├── model/           JPA entities (User, Collection, SavedItem)
-│       ├── repository/      Spring Data repositories
-│       ├── security/        JWT filter, util, user details service
-│       ├── dto/              Request/response objects
-│       └── config/           Security & CORS config
-└── frontend/                 React app (Vite)
-    └── src/
-        ├── pages/             Login, Signup, Home, Explore, Collections, CollectionDetail, SavedItems
-        ├── components/        Sidebar, SearchBar, ResultCard, CollectionCard, modals, etc.
-        ├── context/           Auth + Toast providers
-        └── api/               Axios API clients
-```
-
 ## 🚀 Getting started
 
 ### Prerequisites
@@ -112,27 +90,6 @@ you need to point the frontend at a different backend URL.
 3. Go to **Explore**, search for a GitHub user or repo
 4. Click **🔖 Save**, pick or create a collection
 5. Browse your **Collections** and **Saved Items** any time
-
-## 🔑 API overview
-
-| Method | Endpoint                              | Description                        | Auth |
-|--------|----------------------------------------|-------------------------------------|------|
-| POST   | `/api/auth/signup`                     | Create an account                   | ❌ |
-| POST   | `/api/auth/login`                      | Log in, get a JWT                   | ❌ |
-| GET    | `/api/github/search?q=&type=`          | Search GitHub (`all`/`users`/`repositories`) | ❌ |
-| GET    | `/api/github/users/{username}`         | Get a GitHub user's profile          | ❌ |
-| GET    | `/api/github/repos/{owner}/{repo}`     | Get a GitHub repository              | ❌ |
-| GET    | `/api/collections`                     | List your collections                | ✅ |
-| POST   | `/api/collections`                     | Create a collection                  | ✅ |
-| PUT    | `/api/collections/{id}`                | Rename a collection                  | ✅ |
-| DELETE | `/api/collections/{id}`                | Delete a collection                  | ✅ |
-| GET    | `/api/collections/{id}/items`          | List items in a collection           | ✅ |
-| POST   | `/api/collections/{id}/items`          | Save an item into a collection       | ✅ |
-| DELETE | `/api/collections/{id}/items/{itemId}` | Remove a saved item                  | ✅ |
-| GET    | `/api/collections/recent`              | Your 10 most recently saved items    | ✅ |
-
-Authenticated requests need an `Authorization: Bearer <token>` header, using
-the token returned from signup/login.
 
 ## 🎨 Design notes
 

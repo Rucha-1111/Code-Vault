@@ -1,9 +1,13 @@
-# 🐙 GitHub Collections
+# 🐙 Code Vault
 
 Search GitHub profiles and repositories, view their details, and save them into
 your own custom collections — like Pinterest, but for GitHub.
 
 ![tech](https://img.shields.io/badge/frontend-React-61DAFB) ![tech](https://img.shields.io/badge/backend-Spring%20Boot-6DB33F) ![tech](https://img.shields.io/badge/db-MySQL-4479A1)
+
+## Preview
+
+![Code-Vault Dashboard](Image.png)
 
 ## ✨ Features
 
